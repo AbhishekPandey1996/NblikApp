@@ -1,33 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context="example.abhishek.com.materialdesign.MainActivity">
 
         <include
             android:id="@+id/app_bar"
-            layout="@layout/app_bar" />
+            layout="@layout/app_bar"
+            />
 
-        <TextView
-            android:layout_below ="@+id/app_bar"
+            <it.neokree.materialtabs.MaterialTabHost
+            android:id="@+id/materialTabsHost"
             android:layout_width="match_parent"
+            android:layout_height="48dp"
+                android:elevation="10dp"
+            app:accentColor="@color/colorAccent"
+            app:primaryColor="@color/colorPrimary"
+            app:textColor="#fff"
+
+            />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+
+            />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello text" />
-    </RelativeLayout>
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@android:drawable/sym_def_app_icon" />
+    </LinearLayout>
+
     <fragment
-        android:layout_width="280dp"
         android:id="@+id/fragment_navigation_drawer"
-        android:layout_height="match_parent"
-        app:layout="@layout/fragment_navigation_drawer"
-        android:layout_gravity="start"
         android:name="example.abhishek.com.materialdesign.NavigationDrawerFragment"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:layout="@layout/fragment_navigation_drawer"
         tools:layout="@layout/fragment_navigation_drawer" />
+
+
 
 </android.support.v4.widget.DrawerLayout>
