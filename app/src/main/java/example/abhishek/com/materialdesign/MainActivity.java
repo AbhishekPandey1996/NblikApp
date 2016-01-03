@@ -19,6 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import example.abhishek.com.materialdesign.fragments.FragmentDiscuss;
+import example.abhishek.com.materialdesign.fragments.FragmentHome;
+import example.abhishek.com.materialdesign.fragments.FragmentTrending;
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
     private Toolbar toolbar;
     private MaterialTabHost tabHost;
     private ViewPager viewPager;
+    public static final int VIEW_HOME=0;
+    public static final int VIEW_TRENDING=1;
+    public static final int VIEW_DISCUSS=2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +45,7 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setup(R.id.fragment_navigation_drawer,(DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
@@ -117,8 +117,19 @@ public class MainActivity extends AppCompatActivity implements MaterialTabListen
 
         @Override
         public Fragment getItem(int position) {
-            MyFragment myFragment = MyFragment.getInstansce(position);
-            return myFragment;
+            Fragment fragment = null;
+            switch (position){
+                case  VIEW_HOME:
+                    fragment = FragmentHome.newInstance("","");
+                    break;
+                case VIEW_TRENDING:
+                    fragment = FragmentTrending.newInstance("", "");
+                    break;
+                case VIEW_DISCUSS:
+                    fragment = FragmentDiscuss.newInstance("", "");
+                    break;
+            }
+            return fragment;
         }
 
         @Override

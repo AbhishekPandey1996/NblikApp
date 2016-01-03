@@ -10,13 +10,44 @@
         android:id="@+id/containerdialogueId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff">
+        android:background="@drawable/logo">
 
-        <ImageView
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageview"
-            android:src="@drawable/logo" />
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_gravity="bottom"
+            android:layout_margin="10dp">
+
+            <ImageButton
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ib_instagram"
+                android:background="@drawable/insta_button"/>
+
+            <ImageButton
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/fb_button"
+                android:id="@+id/ib_fblink"/>
+
+            <ImageButton
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/twitter_button"
+                android:id="@+id/ib_twitter" />
+            <ImageButton
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gplus_button"
+                android:id="@+id/ib_googleplus" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

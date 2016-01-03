@@ -61,13 +61,13 @@ public class NavigationDrawerFragment extends Fragment {
 
     public static List<DrawerInformation> getdata(){
         List<DrawerInformation> data = new ArrayList<>();
-        int[] icons = {android.R.drawable.ic_dialog_email,android.R.drawable.ic_dialog_map,android.R.drawable.ic_input_delete,android.R.drawable.ic_dialog_dialer};
-        String[] titles = {"Email","Map","Delete","Dialler"};
+        int[] icons = {R.drawable.ic_no_pic,android.R.drawable.ic_dialog_map,R.drawable.ic_download,R.drawable.message,R.drawable.ic_settings,R.drawable.ic_aboutus,R.drawable.ic_feedback};
+        String[] titles = {"Profile","Draft","Save for Later","Messages","Settings","About","FeedBack"};
 
-        for(int i=0; i<100; i++){
+        for(int i=0; i<icons.length && i<titles.length; i++){
             DrawerInformation current = new DrawerInformation();
-            current.iconId = icons[i%icons.length];
-            current.title = titles[i%titles.length];
+            current.iconId = icons[i];
+            current.title = titles[i];
             data.add(current);
         }
         return data;

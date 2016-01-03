@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TopicName"
+        android:id="@+id/home_topic_name"
+        android:layout_marginLeft="10dp"
+        android:textColor="#07040c"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/home_topic_name"
+        android:text="-author"
+        android:id="@+id/home_author_name"
+        android:layout_marginLeft="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_below="@id/home_author_name"
+        android:layout_marginTop="20dp"
+        android:id="@+id/home_topic_content"
+        android:text="sdfhagdskfgadshkfgalsgfhasgdfklagdsfhklagsdfkhagdfhkagdsfhagdfhgsadhfgaklhdsgfklahdgfkhagdfkhadgf"/>
+
+    <LinearLayout
+        android:layout_below="@id/home_topic_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@android:drawable/btn_plus"
+            android:background="#f7f2f2"
+            android:clickable="true"
+            android:scaleType="fitCenter" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Like"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/message"
+            android:scaleType="fitCenter"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comment"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</RelativeLayout>
